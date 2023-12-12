@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <div th:switch="${categories}">
+        <div th:case="null">No category yet!</div>
+        <div th:case="*">
+            <h2>CATEGORY LIST</h2>
+            <div th:each="category : ${categories}">
+                category name: <span th:text="${category.getTypeProduct()}"></span>
+                <a th:href="@{'/product/' +${category.getId()}}">View list product</a>
+            </div>
+        </div>
+    </div>
+    <a th:href="@{'/product/all-form'}">add p</a>
+</body>
+</html>

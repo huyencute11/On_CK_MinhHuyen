@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/product/save-all}">
+      <label for="name">name</label>
+      <input id="name" name="name"/>
+      <label for="price">price</label>
+      <input type="number" id="price" name="price"/>
+      <label for="categoryId">Cate</label>
+
+        <select id="categoryId" name="categoryId">
+            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.typeProduct}"></option>
+        </select>
+
+        <input type="submit" value="add product"/>
+    </form>
+</body>
+</html>

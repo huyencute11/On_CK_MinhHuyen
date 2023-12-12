@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:switch="${products}">
+        <div th:case="null">
+           No product
+        </div>
+        <div th:case="*">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Cate id</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="product : ${products}">
+                        <td th:text="${product.id}"></td>
+                        <td th:text="${product.name}"></td>
+                        <td th:text="${product.category.getTypeProduct()}"></td>
+                        <td th:text="${product.getPrice()}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a th:href="@{/product/add-form}">add ney</a>
+</body>
+</html>
