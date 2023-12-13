@@ -1,5 +1,6 @@
 package com.example.ck_demo;
 
+import net.datafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,9 +14,10 @@ public class CkDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(CkDemoApplication.class, args);
     }
-//    @Bean
-//    CommandLineRunner commandLineRunner(ProductReponsitory productReponsitory){
-//        return args -> {
+
+    @Bean
+    CommandLineRunner commandLineRunner() {
+        return args -> {
 //                Product p =new Product("IPhone", "Moden", "US", "phone", ProductStatus.ACTIVE);
 //                Product p1 =new Product("Samsung", "Convenient", "Korea", "phone", ProductStatus.ACTIVE);
 //            productReponsitory.saveAll(List.of(p, p1));
@@ -31,8 +33,10 @@ public class CkDemoApplication {
 //            Customer c1 = new Customer("0123412789", "hoanganh@gmail.com", "Hoang Anh", "Nguyen Van Nghi, phuong 1, Go Vap");
 //            customerReponsitory.saveAll(List.of(c,c1));
 //            List<Customer> list = customerReponsitory.findAll();
-//            list.forEach();\
+//            list.forEach();
 //            System.out.println();
 //            list.forEach(System.out::println);
-//        };
+            Faker faker = new Faker();
+        };
+    }
 }

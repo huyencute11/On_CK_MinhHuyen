@@ -28,6 +28,9 @@ public class ProductController {
         session.setAttribute("cateCurrentId", cateId);
         model.addAttribute("products", productService.getAllProductByCateId(cateId));
         return "list";
+
+
+
     }
     @GetMapping("/add-form")
     public String getForm(){
